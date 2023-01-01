@@ -64,6 +64,29 @@ public class FairQueueStochasticImplTest {
   }
 
   @Test
+  public void fairQueueOrder() {
+    assertEquals(0, queue.size());
+    assertTrue(queue.isEmpty());
+
+    queue.add(1);
+    queue.add(7);
+    queue.add(1);
+    queue.add(6);
+    queue.add(4);
+    queue.add(1);
+    queue.add(2);
+
+    assertEquals(1, queue.remove());
+    assertEquals(7, queue.remove());
+    assertEquals(4, queue.remove());
+    assertEquals(1, queue.remove());
+    assertEquals(2, queue.remove());
+    assertEquals(6, queue.remove());
+    assertEquals(1, queue.remove());
+    assertNull(queue.remove());
+  }
+
+  @Test
   public void fairQueueClear() {
     IntStream.range(0, 100).forEach(queue::add);
 
