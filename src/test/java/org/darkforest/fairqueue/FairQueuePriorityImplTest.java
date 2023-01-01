@@ -53,7 +53,7 @@ public class FairQueuePriorityImplTest {
     assertEquals(0, queue.size());
     assertTrue(queue.isEmpty());
 
-    assertTrue(SortHelper.isSorted(extracted));
+    assertTrue(SortHelper.isForwardSorted(extracted));
   }
 
   @Test

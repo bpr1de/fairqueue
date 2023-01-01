@@ -50,7 +50,7 @@ public class FairQueueStochasticImplTest {
     assertNull(queue.remove());
 
     assertEquals(8, extracted.size());
-    assertFalse(SortHelper.isSorted(extracted));
+    assertFalse(SortHelper.isForwardSorted(extracted));
     extracted.sort(null);
 
     assertEquals(0, (int) extracted.get(0));

@@ -28,9 +28,9 @@ public class FairQueueRandomImplTest {
     assertTrue(queue.isEmpty());
     assertNull(queue.remove());
 
-    IntStream.range(0, 15).forEach(queue::add);
+    IntStream.range(0, 100).forEach(queue::add);
 
-    assertEquals(15, queue.size());
+    assertEquals(100, queue.size());
     assertFalse(queue.isEmpty());
 
     ArrayList<Integer> extracted = new ArrayList<>();
@@ -38,11 +38,15 @@ public class FairQueueRandomImplTest {
       extracted.add(queue.remove());
     }
 
-    assertEquals(15, extracted.size());
+    assertEquals(100, extracted.size());
     assertEquals(0, queue.size());
     assertTrue(queue.isEmpty());
 
-    assertFalse(SortHelper.isSorted(extracted));
+    /*
+     * There is a very small chance this test can fail, given the random
+     * nature of this queue. Using a large enough queue should kill the odds.
+     */
+    assertFalse(SortHelper.isForwardSorted(extracted));
   }
 
   @Test
