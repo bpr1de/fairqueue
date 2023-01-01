@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Bryan Phillippe (bp@terran.org)
+ * Copyright (c) 2020, Bryan Phillippe (bp@darkforest.org)
  * May be used under the terms of the BSD license.
  */
 
