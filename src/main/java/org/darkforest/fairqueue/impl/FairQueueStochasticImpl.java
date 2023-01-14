@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2020, Bryan Phillippe (bp@darkforest.org)
- * May be used under the terms of the BSD license.
+ * Copyright (c) 2020-2023, Bryan Phillippe <bp@darkforest.org>
+ * See LICENSE for terms of use.
  */
 
 package org.darkforest.fairqueue.impl;
